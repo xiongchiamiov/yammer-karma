@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Yammer Karma</title>
+	<style type="text/css">
+		body {
+			color: #ddd;
+			background-color: #222;
+			font-family: Tahoma, Geneva, "Trebuchet MS", sans-serif;
+			margin-left: 10%;
+			margin-right: 10%;
+			line-height: 1.6;
+		}
+		a {
+			color: #AFB8DE;
+		}
+		a:visited {
+			color: #C7AFDE;
+		}
+		p, #karma {
+			border: 2px dashed #444;
+			padding: 1em;
+		}
+		#karma {
+			list-style: none;
+		}
+		#karma li {
+			margin: 0;
+			margin-bottom: 1em;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		Are you just a slight bit egocentric and want to know how much other
+		people like the stuff you write on Yammer?  Well, here are the
+		rankings:
+	</p>
+	<ul id="karma">
+	{% for name, karma in userKarma %}
+		<li>{{ karma }} likes &mdash; {{ name }}</li>
+	{% endfor %}
+	</ul>
+</body>
+</html>
+
